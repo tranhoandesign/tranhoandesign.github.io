@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BPM Platform | Trần Hoàn</title>
+  <meta name="description" content="Case study thiết kế hệ sinh thái BPM/LOS tại MB Bank: web xử lý hồ sơ vay, app bán tín dụng cho RM, mini app CRM và Design System.">
+  <script>try{var l=new URLSearchParams(location.search).get("lang")||localStorage.getItem("lang")||"en";if(l!=="vi")l="en";document.documentElement.dataset.lang=l;document.documentElement.lang=l}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=52">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23181c14'/><text x='50%' y='58%' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='900' font-size='34' fill='%23ecdfcc'>TH</text></svg>">
+</head>
+<body data-page="work" data-slug="bpm">
+
+<main>
+  <header class="p-head">
+    <div class="p-title-row">
+      <h1 class="p-title" data-split>BPM Platform</h1>
+      <div class="p-count"><div><span class="label">Platforms</span><b><span lang="vi">Web · App</span><span lang="en">Web · App</span></b></div><div><span class="label">Users</span><b><span lang="vi">03 nhóm</span><span lang="en">03 groups</span></b></div></div>
+    </div>
+    <div class="p-meta"><div><span class="label">Tags</span><div class="v">Product Design · Design System<br>Enterprise UX · Banking</div></div><div><span class="label">Year</span><div class="v"><span lang="vi">2022 — Nay</span><span lang="en">2022 — Present</span></div></div><div><span class="label">Role</span><div class="v">Senior UXUI Designer</div></div><div><span class="label">Tools</span><div class="v">Figma · FigJam<br>Claude Code · UX Pilot</div></div></div>
+  </header>
+  <figure class="p-hero reveal bleed" style="--tint:#4a4a4c;margin-bottom:0">
+    <img src="assets/img/bpm_hero.jpg" alt="BPM loan-file screen on a laptop">
+  </figure>
+  <section class="p-intro">
+    <span class="label">Overview</span>
+    <p class="reveal"><span lang="vi">Biến quy trình xử lý hồ sơ vay nhiều tầng phê duyệt thành một hệ sinh thái rõ ràng — từ lúc RM tìm cơ hội bán trên app, đến khi hồ sơ được phê duyệt trên web.</span><span lang="en">Turning a multi-layer loan approval process into one clear ecosystem — from the moment an RM spots a sales opportunity on mobile to the file being approved on the web.</span></p>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">01 — Bối cảnh</span><span lang="en">01 — Context</span></small><span lang="vi">Một hồ sơ, rất nhiều người chạm vào</span><span lang="en">One file, many hands</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p><strong>Business Process Management (BPM/LOS)</strong> quản lý toàn bộ quy trình xử lý hồ sơ các sản phẩm của ngân hàng — Vay, Giải ngân, Thẻ… cùng các công cụ hỗ trợ như Tư vấn giá, Định giá tài sản bảo đảm, Kho TSBĐ và hệ thống Giám sát.</p>
+        <p>Hệ sinh thái gồm <strong>web BPM</strong> cho xử lý hồ sơ, <strong>app MB tín dụng</strong> cho RM ngoài hiện trường và <strong>mini app trong CRM</strong>. Mỗi hồ sơ đi qua nhiều vai trò: <strong>RM</strong> thu thập và đề xuất, <strong>Thẩm định</strong> đánh giá, <strong>Kiểm soát</strong> phê duyệt. Mình phụ trách trải nghiệm end-to-end: research, flow, wireframe, UI, prototype, user testing và bàn giao.</p></div>
+        <div lang="en"><p><strong>Business Process Management (BPM/LOS)</strong> manages processing workflows for the bank’s products — Loans, Disbursement, Cards… — plus support tools such as Price consulting, Collateral valuation, Collateral warehouse and Monitoring.</p>
+        <p>The ecosystem spans the <strong>BPM web app</strong> for file processing, the <strong>MB Credit mobile app</strong> for RMs in the field and a <strong>mini app inside CRM</strong>. Every file passes through several roles: <strong>RMs</strong> collect and propose, <strong>Appraisers</strong> assess, <strong>Controllers</strong> approve. I owned the end-to-end experience: research, flows, wireframes, UI, prototypes, user testing and handover.</p></div>
+      </div>
+    </div>
+
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">02 — Vấn đề</span><span lang="en">02 — Problem</span></small><span lang="vi">Khó dùng, thiếu nhất quán, quá tải thông tin</span><span lang="en">Hard to use, inconsistent, overloaded</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p>Từ stakeholder interview với BA và phản hồi trực tiếp của người dùng, mình tổng hợp 4 nhóm vấn đề chính trên phiên bản cũ.</p></div>
+        <div lang="en"><p>From stakeholder interviews with the BA and direct user feedback, I grouped the old version’s issues into four themes.</p></div>
+      </div>
+    </div>
+<div class="cards" style="--cols:4"><div class="cardx reveal"><span class="k">UX</span><h4><span lang="vi">Luồng thao tác khó sử dụng</span><span lang="en">Hard-to-follow flows</span></h4><div lang="vi"><p>Nhiều bước nhập liệu rời rạc, người dùng khó biết mình đang ở đâu trong hồ sơ.</p></div>
+        <div lang="en"><p>Fragmented input steps; users struggle to know where they are in a file.</p></div></div><div class="cardx reveal"><span class="k">UX</span><h4><span lang="vi">Cá nhân hoá thấp</span><span lang="en">Low personalisation</span></h4><div lang="vi"><p>Phân quyền hiển thị chức năng chưa phù hợp với từng nhóm user.</p></div>
+        <div lang="en"><p>Role-based visibility of features doesn’t fit each user group.</p></div></div><div class="cardx reveal"><span class="k">UI</span><h4><span lang="vi">Thiếu nhất quán</span><span lang="en">Inconsistent UI</span></h4><div lang="vi"><p>Màu sắc, nút bấm, trạng thái chưa được định nghĩa thống nhất.</p></div>
+        <div lang="en"><p>Colours, buttons and states were never defined consistently.</p></div></div><div class="cardx reveal"><span class="k">IA</span><h4><span lang="vi">Phân cấp thông tin mờ</span><span lang="en">Unclear hierarchy</span></h4><div lang="vi"><p>Thông tin chính — phụ lẫn lộn, cản trở việc tiếp nhận và ra quyết định.</p></div>
+        <div lang="en"><p>Primary and secondary information blur together, slowing decisions.</p></div></div></div>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">03 — Quy trình</span><span lang="en">03 — Process</span></small><span lang="vi">Từ audit đến golive</span><span lang="en">From audit to go-live</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p>Mình không vẽ lại ngay. Dự án bắt đầu bằng một đợt <a href="audit-bpm.html" style="border-bottom:1px solid var(--ink-3);color:var(--ink)">Audit BPM</a> để có dữ liệu trước khi đề xuất thay đổi, sau đó đi qua brainstorm, user flow, wireframe rồi mới đến UI.</p></div>
+        <div lang="en"><p>I didn’t jump into redrawing. The project started with an <a href="audit-bpm.html" style="border-bottom:1px solid var(--ink-3);color:var(--ink)">Audit of BPM</a> to gather evidence, then moved through brainstorming, user flows and wireframes before any UI.</p></div>
+      </div>
+    </div>
+<div class="steps" style="--cols:5"><div class="step reveal"><span class="n">01</span><h4>Discover</h4><p><span lang="vi">Stakeholder interview, audit, xác định nhóm user chính.</span><span lang="en">Stakeholder interviews, audit, key user groups.</span></p></div><div class="step reveal"><span class="n">02</span><h4>Brainstorm</h4><p><span lang="vi">Phác thảo tay bố cục, nội dung và các phương án.</span><span lang="en">Hand sketches of layout, content and options.</span></p></div><div class="step reveal"><span class="n">03</span><h4>Flow</h4><p><span lang="vi">User flow liên hệ thống: App MB, CRM, BPM, đối tác định giá.</span><span lang="en">Cross-system flows: MB App, CRM, BPM, valuation partner.</span></p></div><div class="step reveal"><span class="n">04</span><h4>Design</h4><p><span lang="vi">Wireframe, 2 phương án, UI trên Design System.</span><span lang="en">Wireframes, two options, UI on the Design System.</span></p></div><div class="step reveal"><span class="n">05</span><h4>Validate</h4><p><span lang="vi">UT với RM, Thẩm định, Kiểm soát; bàn giao và golive.</span><span lang="en">Testing with RMs, Appraisers, Controllers; handover and go-live.</span></p></div></div>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">04 — Brainstorm</span><span lang="en">04 — Brainstorm</span></small><span lang="vi">Bắt đầu bằng bút và giấy</span><span lang="en">Starting with pen and paper</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p>Trước khi mở Figma, mình phác thảo nhanh <strong>Homepage</strong> (banner, OKR, SLA, dashboard số hồ sơ) và màn <strong>Quản lý hồ sơ đến</strong> cùng BA để thống nhất nội dung.</p>
+        <ul>
+          <li>Danh sách hồ sơ <strong>sắp xếp theo thứ tự SLA gấp</strong>, để RM luôn xử lý việc quan trọng trước.</li>
+          <li>Hồ sơ chia tab Thông tin chung / Phương án / Hồ sơ khách hàng / Upload; nội dung dạng check box và text được tách rõ.</li>
+          <li>Ghi chú ràng buộc: <em>1 màn hình, hạn chế scroll</em>; tải từng file hoặc tải tất cả; ô ý kiến / comment cố định ở cuối.</li>
+          <li>Chốt hướng: đề xuất <strong>2 phương án UX/UI</strong> — bố cục ngang và scroll dọc — để test với người dùng.</li>
+        </ul></div>
+        <div lang="en"><p>Before opening Figma, I sketched the <strong>Homepage</strong> (banner, OKR, SLA, file dashboard) and the <strong>Incoming files</strong> screen with the BA to agree on content.</p>
+        <ul>
+          <li>Files are <strong>sorted by SLA urgency</strong>, so RMs always handle the most pressing work first.</li>
+          <li>A file is split into tabs — General / Plan / Customer documents / Upload — with check-box and free-text content clearly separated.</li>
+          <li>Constraints noted: <em>one screen, minimal scrolling</em>; download single files or all; a fixed comment box at the bottom.</li>
+          <li>Decision: propose <strong>two UX/UI options</strong> — horizontal layout vs vertical scroll — to test with users.</li>
+        </ul></div>
+      </div>
+    </div>
+<figure class="figure reveal" style="--tint:#ffffff"><div class="wrap"><img src="assets/img/bpm_brainstorm.jpg" alt="Hand-drawn sketches of the homepage and incoming files screen" loading="lazy"></div><figcaption><span lang="vi">Phác thảo Homepage và Quản lý hồ sơ đến</span><span lang="en">Sketches of the homepage and incoming files screen</span></figcaption></figure>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">05 — User flow</span><span lang="en">05 — User flows</span></small><span lang="vi">Một hành trình, nhiều hệ thống</span><span lang="en">One journey, many systems</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><h3>Luồng tái cấp tín dụng</h3>
+        <p>Flow theo swimlane giữa <strong>Mô hình chấm điểm, App MB / CRM, Mini app CRM, BPM</strong> và 3 vai trò <strong>RM, Khách hàng, đơn vị định giá</strong>:</p>
+        <ol>
+          <li>Mô hình lọc danh sách phương án đến hạn tái cấp trong 1 tháng và đánh giá kết quả (trong hạn mức thì luồng phê duyệt tự động, ngoài hạn mức thì qua chuyên gia).</li>
+          <li>RM nhận kết quả: đủ điều kiện, không đủ điều kiện, khách hàng không đồng ý tái cấp.</li>
+          <li>Khách hàng xác nhận thông tin, đóng phí và đặt lịch định giá sơ bộ; đơn vị định giá kiểm tra tài sản có thay đổi hay không.</li>
+          <li>Trên Mini app CRM, RM chụp ảnh tài sản, cơ sở kinh doanh, bổ sung hồ sơ rồi xác nhận tái cấp → BPM tạo phương án, hệ thống phê duyệt tự động; nếu không thì dừng luồng.</li>
+        </ol>
+        <h3>Luồng Cơ hội bán tín dụng ↔ CRM</h3>
+        <p>Từ CRM Homepage → Mini app → Cơ hội bán tín dụng (danh sách / tạo mới). Tạo mới yêu cầu nhập thông tin khách hàng, người liên quan và nhu cầu dự đoán. Trong chi tiết cơ hội, RM có đủ công cụ: <strong>gợi ý bán chéo</strong> (bảo hiểm, thẻ, tài khoản số đẹp), <strong>tra CIC</strong>, <strong>tư vấn tài sản</strong>, <strong>minh hoạ khoản vay</strong>, upload hồ sơ và <strong>tạo đề nghị vay vốn</strong> — rồi quay lại CRM.</p></div>
+        <div lang="en"><h3>Credit refinancing flow</h3>
+        <p>A swimlane flow across the <strong>scoring model, MB App / CRM, CRM mini app, BPM</strong> and three roles — <strong>RM, customer, valuation partner</strong>:</p>
+        <ol>
+          <li>The model lists plans due for refinancing within a month and evaluates them (within limit → automatic approval; otherwise → expert approval).</li>
+          <li>The RM receives results: eligible, not eligible, or customer declined.</li>
+          <li>The customer confirms details, pays the fee and books a preliminary valuation; the valuation partner checks whether the collateral has changed.</li>
+          <li>In the CRM mini app, the RM photographs the collateral and business, adds documents and confirms refinancing → BPM creates the plan and the system auto-approves; otherwise the flow stops.</li>
+        </ol>
+        <h3>Credit sales opportunity ↔ CRM flow</h3>
+        <p>From the CRM homepage → mini app → Credit sales opportunities (list / create). Creating one captures customer info, related parties and predicted needs. Inside an opportunity, the RM has every tool at hand: <strong>cross-sell suggestions</strong> (insurance, cards, vanity account numbers), <strong>CIC credit check</strong>, <strong>collateral advice</strong>, <strong>loan illustration</strong>, document upload and <strong>creating a loan request</strong> — then back to CRM.</p></div>
+      </div>
+    </div>
+<figure class="figure reveal" style="--tint:#f5f5f5"><div class="wrap"><img src="assets/img/bpm_flow_taicap.jpg" alt="Swimlane flow for credit refinancing" loading="lazy"></div><figcaption><span lang="vi">Flow luồng tái cấp — swimlane giữa Mô hình, App MB/CRM, Mini app CRM, BPM</span><span lang="en">Refinancing flow — swimlanes across the model, MB App/CRM, CRM mini app and BPM</span></figcaption></figure>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">06 — Wireframe</span><span lang="en">06 — Wireframes</span></small><span lang="vi">Tạo mới tín dụng &amp; phi tín dụng</span><span lang="en">Creating credit &amp; non-credit opportunities</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p>Wireframe cho app của RM được tách thành 2 luồng từ trang chủ: <strong>Tạo mới phi tín dụng</strong> (quét giấy tờ tuỳ thân, tạo lead) và <strong>Tạo mới tín dụng</strong> (danh sách lead theo phễu, chi tiết cơ hội với AI suggest, tư vấn giá trên bản đồ, kết quả định giá, cập nhật trạng thái, hồ sơ khách hàng).</p>
+        <p>Wireframe giữ ở mức grayscale để cả team tập trung vào luồng và nội dung trước khi bàn về UI.</p></div>
+        <div lang="en"><p>Wireframes for the RM app split into two flows from the home screen: <strong>Create non-credit</strong> (scan ID, create a lead) and <strong>Create credit</strong> (lead funnel list, opportunity detail with AI suggestions, map-based price consulting, valuation result, status update, customer profile).</p>
+        <p>Wireframes stayed grayscale so the team focused on flow and content before discussing UI.</p></div>
+      </div>
+    </div>
+<figure class="figure reveal" style="--tint:#3d3d3d"><div class="wrap"><img src="assets/img/bpm_wireframe.jpg" alt="Wireframes for creating a credit opportunity" loading="lazy"></div><figcaption><span lang="vi">Wireframe — Tạo mới tín dụng</span><span lang="en">Wireframes — Create credit</span></figcaption></figure>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">07 — Web BPM</span><span lang="en">07 — BPM web</span></small><span lang="vi">Một hồ sơ, sáu tab, một bức tranh khách hàng</span><span lang="en">One file, six tabs, one customer picture</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p>Luồng trọng tâm là <strong>Cung cấp hồ sơ &amp; đề xuất vay vốn</strong>. Hồ sơ được chia thành 6 tab theo đúng tư duy thẩm định: Thông tin chung → Quan hệ tín dụng → Năng lực tài chính → Tài sản bảo đảm → Phương án vay vốn → Kết luận.</p>
+        <p>Panel hồ sơ khách hàng luôn cố định bên trái, kèm <strong>cảnh báo rủi ro CRA</strong> và <strong>cảnh báo kiểm soát tuân thủ</strong>, để người dùng không bao giờ mất ngữ cảnh khi chuyển tab. Hành động chính <em>Lưu</em> / <em>Trình phê duyệt</em> luôn ở cùng một vị trí.</p></div>
+        <div lang="en"><p>The core flow is <strong>Submitting a file &amp; loan proposal</strong>. A file is split into 6 tabs that mirror how appraisers think: General info → Credit relations → Financial capacity → Collateral → Loan plan → Conclusion.</p>
+        <p>A customer profile panel stays pinned on the left with <strong>CRA risk alerts</strong> and <strong>compliance alerts</strong>, so users never lose context when switching tabs. The primary actions <em>Save</em> / <em>Submit for approval</em> always live in the same place.</p></div>
+      </div>
+    </div>
+<figure class="figure reveal" style="--tint:#dfe3ea"><div class="wrap"><img src="assets/img/bpm_hoso.jpg" alt="Incoming files list" loading="lazy"></div><figcaption><span lang="vi">Hồ sơ đến — danh sách việc cần xử lý, lọc nhanh theo trạng thái</span><span lang="en">Incoming files — a to-do list with quick status filters</span></figcaption></figure>
+<div class="figure-row" style="--cols:2"><figure class="figure reveal" style="--r:0.95;--tint:#dfe3ea"><div class="wrap"><img src="assets/img/bpm_thongtin.jpg" alt="General info tab" loading="lazy"></div><figcaption><span lang="vi">Thông tin chung</span><span lang="en">General information</span></figcaption></figure><figure class="figure reveal" style="--r:1.44;--tint:#dfe3ea"><div class="wrap"><img src="assets/img/bpm_ketluan.jpg" alt="Conclusion tab" loading="lazy"></div><figcaption><span lang="vi">Kết luận</span><span lang="en">Conclusion</span></figcaption></figure></div>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">08 — Phương án</span><span lang="en">08 — Options</span></small><span lang="vi">Upload là icon hay là tab?</span><span lang="en">Upload as an icon or a tab?</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p>Tài liệu đính kèm là điểm đau lớn nhất của RM. Mình thiết kế <strong>2 phương án</strong> và đưa cả hai vào Usability Testing: <strong>OP1</strong> — upload hồ sơ dạng icon mở panel bên phải; <strong>OP2</strong> — upload hồ sơ là một tab riêng.</p>
+        <p>Cùng với đó là bộ công cụ cộng tác: xem chi tiết phương án ngay trên hồ sơ, comment theo từng khối thông tin và chọn TSBĐ từ kho có sẵn.</p></div>
+        <div lang="en"><p>Attachments were the RMs’ biggest pain point. I designed <strong>two options</strong> and took both into usability testing: <strong>OP1</strong> — upload via an icon that opens a side panel; <strong>OP2</strong> — upload as its own tab.</p>
+        <p>Alongside came collaboration tools: viewing the loan plan in place, commenting on each information block, and picking collateral from the existing warehouse.</p></div>
+      </div>
+    </div>
+<div class="figure-row" style="--cols:2"><figure class="figure reveal" style="--r:1.86;--tint:#c9d3c0"><div class="wrap"><img src="assets/img/bpm_upload.jpg" alt="Upload panel" loading="lazy"></div><figcaption><span lang="vi">OP1 — Upload dạng icon / panel</span><span lang="en">OP1 — Upload as icon / panel</span></figcaption></figure><figure class="figure reveal" style="--r:1.86;--tint:#c9d3c0"><div class="wrap"><img src="assets/img/bpm_upload2.jpg" alt="Document preview" loading="lazy"></div><figcaption><span lang="vi">Xem trước tài liệu ngay trong hồ sơ</span><span lang="en">Preview documents inside the file</span></figcaption></figure></div>
+<div class="figure-row" style="--cols:2"><figure class="figure reveal" style="--r:1.86;--tint:#c9d3c0"><div class="wrap"><img src="assets/img/bpm_chitiet.jpg" alt="Loan plan detail" loading="lazy"></div><figcaption><span lang="vi">Chi tiết phương án</span><span lang="en">Loan plan detail</span></figcaption></figure><figure class="figure reveal" style="--r:1.86;--tint:#c9d3c0"><div class="wrap"><img src="assets/img/bpm_comments.jpg" alt="Comments" loading="lazy"></div><figcaption><span lang="vi">Comments theo ngữ cảnh</span><span lang="en">Contextual comments</span></figcaption></figure></div>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">09 — App MB tín dụng</span><span lang="en">09 — MB Credit app</span></small><span lang="vi">Cơ hội bán tín dụng trong túi RM</span><span lang="en">Credit sales opportunities in the RM’s pocket</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p>Trên app, luồng <strong>Cơ hội bán tín dụng</strong> được tổ chức thành 4 nhóm màn hình: <strong>Điểm chạm</strong> (tạo mới, điểm tín dụng), <strong>Chi tiết cơ hội</strong>, <strong>Công cụ cho RM</strong> (CIC, tư vấn tài sản, lịch sử, upload hồ sơ, tái sử dụng hồ sơ, tạo đề nghị cấp tín dụng) và <strong>Kết quả</strong> (đang xử lý / đẩy bổ sung hồ sơ).</p>
+        <p>Với công cụ hỗ trợ tư vấn, mình đề xuất 3 phương án: <strong>OP1 — Minh hoạ khoản vay</strong> (form tính lịch trả nợ), <strong>OP2 — Trợ lý tín dụng dạng chatbot</strong> theo kịch bản cho phương án vay SXKD và xây/sửa/mua sắm, trả kết quả cho RM dạng PDF, và <strong>OP3 — Trợ lý tín dụng AI</strong> trò chuyện tự do.</p></div>
+        <div lang="en"><p>In the app, the <strong>Credit sales opportunity</strong> flow is organised into four screen groups: <strong>Touchpoints</strong> (create, credit score), <strong>Opportunity detail</strong>, <strong>RM tools</strong> (CIC, collateral advice, history, document upload, document reuse, credit request) and <strong>Results</strong> (in progress / request more documents).</p>
+        <p>For the advisory tool I proposed three options: <strong>OP1 — Loan illustration</strong> (repayment schedule form), <strong>OP2 — Scripted credit assistant chatbot</strong> for business-loan and build/repair/purchase plans that returns a PDF to the RM, and <strong>OP3 — AI credit assistant</strong> with free-form conversation.</p></div>
+      </div>
+    </div>
+<figure class="figure reveal" style="--tint:#7d7d7d"><div class="wrap"><img src="assets/img/bpm_app_overview.jpg" alt="Overview of the MB Credit app flows" loading="lazy"></div><figcaption><span lang="vi">Toàn cảnh luồng Cơ hội bán tín dụng trên app</span><span lang="en">Overview of the credit sales opportunity flow in the app</span></figcaption></figure>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">10 — Design System</span><span lang="en">10 — Design System</span></small><span lang="vi">Xây BPM Design System theo Atomic Design</span><span lang="en">Building the BPM Design System with Atomic Design</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p>BPM Design System được xây từ dưới lên theo phương pháp <strong>Atomic Design</strong>: bắt đầu từ <strong>Design Tokens</strong>, ghép thành <strong>Atoms → Molecules → Organisms</strong>, đặt vào <strong>Templates</strong> và kiểm chứng trên <strong>Pages</strong> thật. Nhờ vậy, một thay đổi ở token (ví dụ màu brand) lan xuống toàn bộ component và màn hình mà không phải sửa tay.</p>
+        <p>Mọi ví dụ bên dưới lấy từ chính file BPM Design System; phần atom được dựng lại bằng code từ giá trị Figma Variables.</p></div>
+        <div lang="en"><p>The BPM Design System was built bottom-up with <strong>Atomic Design</strong>: starting from <strong>Design Tokens</strong>, composed into <strong>Atoms → Molecules → Organisms</strong>, placed into <strong>Templates</strong> and proven on real <strong>Pages</strong>. A change at token level (say, the brand colour) flows through every component and screen with no manual edits.</p>
+        <p>Every example below comes from the BPM Design System file itself; atoms are rebuilt in code from the Figma Variables values.</p></div>
+      </div>
+    </div>
+<div class="atomic-flow reveal" role="img" aria-label="Design Tokens, Atoms, Molecules, Organisms, Templates, Pages"><div class="af-step"><svg viewBox="0 0 72 72" fill="currentColor" aria-hidden="true"><circle cx="38" cy="18" r="11"/><rect x="10" y="40" width="20" height="20"/><path d="M50 38 62 60H38z"/></svg><h4>Design Tokens</h4><p><span lang="vi">Màu, chữ, spacing, radius, shadow</span><span lang="en">Colour, type, spacing, radius, shadow</span></p></div><div class="af-step"><svg viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="38" r="26" fill="currentColor" opacity=".18"/><circle cx="36" cy="38" r="15" fill="currentColor"/><circle cx="56" cy="16" r="6" fill="currentColor"/></svg><h4>Atoms</h4><p><span lang="vi">Button, radio, checkbox, tag, input</span><span lang="en">Button, radio, checkbox, tag, input</span></p></div><div class="af-step"><svg viewBox="0 0 72 72" fill="currentColor" aria-hidden="true"><g opacity=".2"><circle cx="36" cy="18" r="15"/><circle cx="18" cy="48" r="15"/><circle cx="54" cy="48" r="15"/></g><circle cx="36" cy="18" r="8"/><circle cx="18" cy="48" r="8"/><circle cx="54" cy="48" r="8"/></svg><h4>Molecules</h4><p><span lang="vi">Nhóm field, dòng accordion</span><span lang="en">Field group, accordion row</span></p></div><div class="af-step"><svg viewBox="0 0 72 72" fill="currentColor" aria-hidden="true"><circle cx="12" cy="18" r="7" opacity=".2"/><circle cx="12" cy="18" r="4.5"/><circle cx="12" cy="36" r="7" opacity=".2"/><circle cx="12" cy="36" r="4.5"/><circle cx="12" cy="54" r="7" opacity=".2"/><circle cx="12" cy="54" r="4.5"/><circle cx="28" cy="18" r="7" opacity=".2"/><circle cx="28" cy="18" r="4.5"/><circle cx="28" cy="36" r="7" opacity=".2"/><circle cx="28" cy="36" r="4.5"/><circle cx="28" cy="54" r="7" opacity=".2"/><circle cx="28" cy="54" r="4.5"/><circle cx="44" cy="18" r="7" opacity=".2"/><circle cx="44" cy="18" r="4.5"/><circle cx="44" cy="36" r="7" opacity=".2"/><circle cx="44" cy="36" r="4.5"/><circle cx="44" cy="54" r="7" opacity=".2"/><circle cx="44" cy="54" r="4.5"/><circle cx="60" cy="18" r="7" opacity=".2"/><circle cx="60" cy="18" r="4.5"/><circle cx="60" cy="36" r="7" opacity=".2"/><circle cx="60" cy="36" r="4.5"/><circle cx="60" cy="54" r="7" opacity=".2"/><circle cx="60" cy="54" r="4.5"/></svg><h4>Organisms</h4><p><span lang="vi">Header, sidebar, profile, checklist</span><span lang="en">Header, sidebar, profile, checklist</span></p></div><div class="af-step"><svg viewBox="0 0 72 72" aria-hidden="true"><rect x="8" y="8" width="56" height="56" rx="10" fill="none" stroke="currentColor" stroke-width="5" stroke-dasharray="7 5"/><rect x="18" y="18" width="36" height="36" rx="5" fill="currentColor" opacity=".18"/></svg><h4>Templates</h4><p><span lang="vi">Bố cục màn hình hồ sơ</span><span lang="en">Loan-file screen layout</span></p></div><div class="af-step"><svg viewBox="0 0 72 72" aria-hidden="true"><rect x="8" y="8" width="56" height="56" rx="12" fill="none" stroke="currentColor" stroke-width="6"/><rect x="18" y="18" width="36" height="36" rx="5" fill="currentColor" opacity=".18"/></svg><h4>Pages</h4><p><span lang="vi">Màn hình thật với dữ liệu</span><span lang="en">Real screen with real data</span></p></div></div>
+<div class="atomic-stage reveal">
+  <div class="as-label"><span class="n">01</span><h4>Design Tokens</h4><p><span lang="vi">Nền móng được khai báo bằng Figma Variables, chia thành các collection: Global (giá trị gốc), Alias (theo ngữ nghĩa: surface, text, icon, border, entry…), Component, Effect, Sizing, Typography — tổng cộng hơn 1.500 biến.</span><span lang="en">The foundation is declared as Figma Variables, split into collections: Global (raw values), Alias (semantic: surface, text, icon, border, entry…), Component, Effect, Sizing and Typography — over 1,500 variables in total.</span></p></div>
+  <div class="as-panel">
+  <span class="cap">Figma Variables — collections</span>
+  <div class="as-row"><span class="at-tag" style="background:#fff;color:#14142a;box-shadow:inset 0 0 0 1px #e2e8f0;padding:6px 10px">Alias <b style="color:#141ed2">197</b></span><span class="at-tag" style="background:#fff;color:#14142a;box-shadow:inset 0 0 0 1px #e2e8f0;padding:6px 10px">Global <b style="color:#141ed2">246</b></span><span class="at-tag" style="background:#fff;color:#14142a;box-shadow:inset 0 0 0 1px #e2e8f0;padding:6px 10px">Component <b style="color:#141ed2">934</b></span><span class="at-tag" style="background:#fff;color:#14142a;box-shadow:inset 0 0 0 1px #e2e8f0;padding:6px 10px">Effect <b style="color:#141ed2">45</b></span><span class="at-tag" style="background:#fff;color:#14142a;box-shadow:inset 0 0 0 1px #e2e8f0;padding:6px 10px">Sizing <b style="color:#141ed2">70</b></span><span class="at-tag" style="background:#fff;color:#14142a;box-shadow:inset 0 0 0 1px #e2e8f0;padding:6px 10px">Typography <b style="color:#141ed2">39</b></span><span class="at-tag" style="background:#fff;color:#14142a;box-shadow:inset 0 0 0 1px #e2e8f0;padding:6px 10px">VisibleTool <b style="color:#141ed2">2</b></span></div>
+  <img src="assets/img/bpm_variables.jpg" alt="Figma Variables panel: Alias collection with surface, text, icon, border and entry groups mapped to global colour tokens" style="width:100%;max-width:760px" data-zoomable loading="lazy">
+</div>
+</div>
+<div class="atomic-stage reveal">
+  <div class="as-label"><span class="n">02</span><h4>Atoms</h4><p><span lang="vi">Thành phần nhỏ nhất, không thể chia nhỏ hơn. Mỗi atom chỉ dùng token, không dùng giá trị cứng.</span><span lang="en">The smallest pieces. Every atom uses tokens only — no hard-coded values.</span></p></div>
+  <div class="as-panel">
+  <span class="cap">Button · Radio · Checkbox · Tag · Badge · Input</span>
+  <div class="as-row">
+    <span class="at-btn primary">➤ Trình phê duyệt</span>
+    <span class="at-btn secondary">Lưu</span>
+    <span class="at-btn disabled">Disabled</span>
+  </div>
+  <div class="as-row">
+    <span class="at-radio on"><i></i>Đồng ý</span>
+    <span class="at-radio"><i></i>Từ chối</span>
+    <span class="at-check on"><i></i>Sai luồng</span>
+    <span class="at-check"><i></i>Lỗi hệ thống</span>
+    <span class="at-tag">Nhà đất</span>
+    <span class="at-badge">MỚI</span>
+  </div>
+  <div class="as-row">
+    <div class="at-input"><label>Ý kiến của kiểm soát <b>*</b></label><span>Nhập ý kiến…</span></div>
+  </div>
+</div>
+</div>
+<div class="atomic-stage reveal">
+  <div class="as-label"><span class="n">03</span><h4>Molecules</h4><p><span lang="vi">Ghép các atom thành một đơn vị có chức năng: một nhóm field, một dòng checklist.</span><span lang="en">Atoms combined into a functional unit: a field group, a checklist row.</span></p></div>
+  <div class="as-panel">
+  <span class="cap">Field group — label + radio</span>
+  <img src="assets/img/ads_mol_input.jpg" alt="Field group: Ý kiến của kiểm soát with Đồng ý / Từ chối radio buttons" style="width:196px" loading="lazy">
+  <span class="cap">Accordion row — chevron + checkbox + index + title</span>
+  <img src="assets/img/ads_mol_acc_item.jpg" alt="Accordion row molecule" style="width:100%" loading="lazy">
+</div>
+</div>
+<div class="atomic-stage reveal">
+  <div class="as-label"><span class="n">04</span><h4>Organisms</h4><p><span lang="vi">Các khối giao diện hoàn chỉnh dùng lại trên nhiều màn hình: header hồ sơ, sidebar, thẻ khách hàng, checklist nhiều cấp.</span><span lang="en">Complete interface blocks reused across screens: file header, sidebar, customer card, multi-level checklist.</span></p></div>
+  <div class="as-panel">
+  <span class="cap">Header — mã hồ sơ, trạng thái, actions</span>
+  <img src="assets/img/ads_org_header.jpg" alt="Loan file header organism" style="width:100%" loading="lazy">
+  <div class="as-grid2">
+    <div style="display:grid;gap:10px"><span class="cap">Sidebar</span><img src="assets/img/ads_org_sidebar.jpg" alt="Sidebar navigation organism" style="width:44px" loading="lazy"></div>
+    <div class="as-row" style="align-items:flex-start">
+      <div style="display:grid;gap:10px"><span class="cap">Customer profile</span><img src="assets/img/ads_org_profile.jpg" alt="Customer profile card organism" style="width:220px" loading="lazy"></div>
+      <div style="display:grid;gap:10px"><span class="cap">Checklist accordion</span><img src="assets/img/ads_org_accordion.jpg" alt="Nested checklist accordion organism" style="width:300px" loading="lazy"></div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="atomic-stage reveal">
+  <div class="as-label"><span class="n">05</span><h4>Templates</h4><p><span lang="vi">Bố cục chuẩn của một màn hình hồ sơ, đo đúng kích thước thật, chưa có dữ liệu.</span><span lang="en">The standard layout of a loan-file screen, at real measurements, without data.</span></p></div>
+  <div class="as-panel">
+  <span class="cap">Loan-file template — 1920 × 1038</span>
+  <div class="tpl" role="img" aria-label="Template: sidebar 74px, header 90px, profile column 335px and main content area">
+    <div class="t-side"><em>Sidebar · 74</em></div>
+    <div class="t-main">
+      <div class="t-head"><em>Header · 90</em></div>
+      <div class="t-body"><div><em>Profile · 335</em></div><div><em>Content · 1435</em></div></div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="atomic-stage reveal">
+  <div class="as-label"><span class="n">06</span><h4>Pages</h4><p><span lang="vi">Template được đổ dữ liệu thật — nơi kiểm chứng toàn bộ hệ thống hoạt động cùng nhau.</span><span lang="en">The template filled with real data — where the whole system is proven to work together.</span></p></div>
+  <div class="as-panel">
+  <span class="cap">Page — Ý kiến kiểm soát</span>
+  <img src="assets/img/ads_page_full.jpg" alt="Full BPM page: control review with customer profile and checklist accordion" style="width:100%" data-zoomable loading="lazy">
+</div>
+</div>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">11 — Tài liệu &amp; Grid</span><span lang="en">11 — Docs &amp; grid</span></small><span lang="vi">Viết tài liệu cho từng component</span><span lang="en">Documenting every component</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p>Mỗi component có trang tài liệu riêng, ví dụ <strong>Accordion</strong> dùng cho checklist ý kiến kiểm soát (sai luồng, thiếu checklist, trả lại theo yêu cầu…), kèm ví dụ sử dụng thực tế ngay trên màn hình BPM, ngày cập nhật, người phụ trách và trạng thái.</p>
+        <p>Hệ thống <strong>Grid</strong> định nghĩa lưới 8 / 12 / 16 / 20 cột, thông số breakpoint (1920, 1440, 1280), layout anatomy (App bar, Navigation, Body) và side rail grid cho thanh điều hướng thu gọn / mở rộng.</p>
+        <p><a href="design-system.html" style="border-bottom:1px solid var(--ink-3);color:var(--ink)">Xem case study Design System →</a></p></div>
+        <div lang="en"><p>Each component has its own doc page — for example the <strong>Accordion</strong> used for control-review checklists (wrong flow, missing checklist, returned on request…) — with a real in-product example, last-updated date, owner and status.</p>
+        <p>The <strong>Grid</strong> system defines 8 / 12 / 16 / 20-column grids, breakpoint specs (1920, 1440, 1280), layout anatomy (App bar, Navigation, Body) and side-rail grids for collapsed / expanded navigation.</p>
+        <p><a href="design-system.html" style="border-bottom:1px solid var(--ink-3);color:var(--ink)">Read the Design System case study →</a></p></div>
+      </div>
+    </div>
+<figure class="figure reveal" style="--tint:#e9e9ef"><div class="wrap"><img src="assets/img/bpm_ds_accordion.jpg?v=2" alt="Accordion component documentation" loading="lazy"></div><figcaption><span lang="vi">Accordion — component doc kèm ví dụ sử dụng trên BPM</span><span lang="en">Accordion — component doc with an in-product example</span></figcaption></figure>
+<figure class="figure reveal fig-narrow" style="--tint:#eef3fb"><div class="wrap"><img src="assets/img/bpm_grid.jpg?v=2" alt="Grid system documentation" loading="lazy"></div><figcaption><span lang="vi">Grid — columns, breakpoints, layout anatomy, side rail</span><span lang="en">Grid — columns, breakpoints, layout anatomy, side rail</span></figcaption></figure>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">12 — Bài học</span><span lang="en">12 — Learnings</span></small><span lang="vi">Thiết kế enterprise là thiết kế cho sự tin cậy</span><span lang="en">Enterprise design is design for trust</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><ul>
+          <li>Audit trước, vẽ sau: dữ liệu từ người dùng thật giúp các đề xuất được stakeholder đồng thuận nhanh hơn.</li>
+          <li>Vẽ flow xuyên hệ thống (App, CRM, BPM, đối tác) giúp lộ ra các điểm đứt gãy mà nhìn từng màn hình không thấy.</li>
+          <li>Giữ ngữ cảnh quan trọng hơn giảm số click: panel khách hàng cố định giúp thẩm định viên tự tin hơn khi ra quyết định.</li>
+          <li>Atomic Design giúp cả team nói chung một ngôn ngữ: designer, BA và dev đều biết một màn hình được ghép từ những khối nào.</li>
+          <li>Design System là sản phẩm, không phải file Figma: cần tài liệu, owner và quy trình cập nhật.</li>
+        </ul></div>
+        <div lang="en"><ul>
+          <li>Audit first, draw later: evidence from real users gets stakeholders aligned faster.</li>
+          <li>Mapping flows across systems (App, CRM, BPM, partners) exposes breaks you never see screen by screen.</li>
+          <li>Keeping context matters more than saving clicks: a pinned customer panel makes appraisers more confident.</li>
+          <li>Atomic Design gives the whole team one vocabulary: designers, BAs and developers all know which blocks a screen is built from.</li>
+          <li>A Design System is a product, not a Figma file: it needs docs, an owner and an update process.</li>
+        </ul></div>
+      </div>
+    </div>
+
+  </section>
+  <a class="next" href="work.html" data-view></a>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="assets/js/data.js?v=52" defer></script>
+<script src="assets/js/main.js?v=52" defer></script>
+</body>
+</html>

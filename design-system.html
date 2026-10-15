@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SDS Design System | Trần Hoàn</title>
+  <meta name="description" content="Case study xây dựng Design System: kiến trúc token 3 tầng, component và tài liệu hướng dẫn.">
+  <script>try{var l=new URLSearchParams(location.search).get("lang")||localStorage.getItem("lang")||"en";if(l!=="vi")l="en";document.documentElement.dataset.lang=l;document.documentElement.lang=l}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=52">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23181c14'/><text x='50%' y='58%' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='900' font-size='34' fill='%23ecdfcc'>TH</text></svg>">
+</head>
+<body data-page="work" data-slug="design-system">
+
+<main>
+  <header class="p-head">
+    <div class="p-title-row">
+      <h1 class="p-title" data-split>SDS Design System</h1>
+      <div class="p-count"><div><span class="label">Components</span><b>35</b></div><div><span class="label">Tokens</span><b>750+</b></div><div><span class="label">Tiers</span><b>03</b></div></div>
+    </div>
+    <div class="p-meta"><div><span class="label">Tags</span><div class="v">Design System · Design Tokens<br>Component · Documentation</div></div><div><span class="label">Year</span><div class="v">2025</div></div><div><span class="label">Role</span><div class="v">Senior UXUI Designer</div></div><div><span class="label">Tools</span><div class="v">Figma Variables · Components<br>Claude Code</div></div></div>
+  </header>
+  <figure class="p-hero reveal bleed" style="--tint:#141dd2;margin-bottom:0">
+    <img src="assets/img/ds_overview.jpg" alt="SDS Design System — CTA Button documentation cover">
+  </figure>
+  <section class="p-intro">
+    <span class="label">Overview</span>
+    <p class="reveal"><span lang="vi">Một Design System chỉ có giá trị khi cả designer, BA và developer cùng hiểu và dùng nó như nhau — nên mình xây nó như một sản phẩm: token, component và tài liệu.</span><span lang="en">A Design System only pays off when designers, BAs and developers understand and use it the same way — so I built it like a product: tokens, components and documentation.</span></p>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">01 — Bối cảnh</span><span lang="en">01 — Context</span></small><span lang="vi">Nhiều sản phẩm, một ngôn ngữ</span><span lang="en">Many products, one language</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p>Các nền tảng nghiệp vụ nội bộ được phát triển bởi nhiều team, mỗi nơi một kiểu màu, nút bấm và trạng thái. Kết quả audit cho thấy cùng một vấn đề lặp lại: <strong>thiếu nhất quán</strong>, <strong>trạng thái không rõ</strong> và mỗi lần bàn giao lại phải giải thích lại từ đầu.</p>
+        <p>Mục tiêu: xây một Design System có nền tảng token rõ ràng, component chuẩn hoá và tài liệu đủ để bất kỳ ai cũng dùng đúng mà không cần hỏi lại designer.</p></div>
+        <div lang="en"><p>Internal business platforms were built by many teams, each with its own colours, buttons and states. Audits kept surfacing the same problems: <strong>inconsistency</strong>, <strong>unclear states</strong>, and every handover meant explaining everything again.</p>
+        <p>The goal: a Design System with a clear token foundation, standardised components and documentation good enough that anyone can use it correctly without asking a designer.</p></div>
+      </div>
+    </div>
+<div class="steps" style="--cols:5"><div class="step reveal"><span class="n">01</span><h4>Audit</h4><p><span lang="vi">Kiểm kê UI hiện có: màu, typography, component, trạng thái bị lặp hoặc lệch.</span><span lang="en">Inventory existing UI: duplicated or drifting colours, type, components, states.</span></p></div><div class="step reveal"><span class="n">02</span><h4>Foundation</h4><p><span lang="vi">Xây token 3 tầng bằng Figma Variables: global → alias → component.</span><span lang="en">Build 3-tier tokens with Figma Variables: global → alias → component.</span></p></div><div class="step reveal"><span class="n">03</span><h4>Component</h4><p><span lang="vi">Dựng component có variant, size, state và property rõ ràng.</span><span lang="en">Build components with clear variants, sizes, states and properties.</span></p></div><div class="step reveal"><span class="n">04</span><h4>Document</h4><p><span lang="vi">Viết tài liệu theo template 6 phần cho từng component.</span><span lang="en">Write docs for every component with a 6-part template.</span></p></div><div class="step reveal"><span class="n">05</span><h4>Govern</h4><p><span lang="vi">Version, trạng thái, ngày cập nhật; hướng dẫn và đồng bộ với dev.</span><span lang="en">Versioning, status, update dates; guidance and sync with developers.</span></p></div></div>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">02 — Research</span><span lang="en">02 — Research</span></small><span lang="vi">Finger-friendly: thiết kế cho ngón tay</span><span lang="en">Finger-friendly: designing for fingers</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p>Trước khi chốt kích thước component cho mobile, mình tổng hợp nghiên cứu về <strong>vùng chạm trên màn hình cảm ứng</strong> để mọi nút bấm đều dễ chạm và hạn chế bấm nhầm:</p>
+        <ul>
+          <li><strong>Apple HIG</strong> khuyến nghị vùng chạm tối thiểu 44×44px; <strong>Microsoft</strong> đề xuất 34px (tối thiểu 26px); <strong>Nokia</strong> không nhỏ hơn 1×1 cm (~28px).</li>
+          <li><strong>Fitts’s Law:</strong> mục tiêu càng nhỏ, người dùng càng mất nhiều thời gian và sự chú ý để bấm trúng.</li>
+          <li>Ngón trỏ rộng trung bình 16–20 mm (~45–57px), ngón cái ~2,5 cm (~72–75px). <strong>MIT Touch Lab</strong>: đầu ngón tay 8–10 mm, nên 10×10 mm là vùng chạm tối thiểu phù hợp.</li>
+          <li>Giữ <strong>khoảng cách ≥ 10px</strong> giữa các vùng chạm để tránh chạm nhầm.</li>
+        </ul>
+        <p>Lưu ý: các nghiên cứu này được thực hiện trên mẫu người dùng nước ngoài, nên được dùng làm mốc tham chiếu khi đối chiếu với thang size button của SDS. Bên dưới, mỗi vùng chạm được vẽ đúng tỉ lệ 1:1 trên đầu ngón tay.</p></div>
+        <div lang="en"><p>Before locking mobile component sizes, I compiled research on <strong>touch targets</strong> so every control is easy to hit and hard to mis-tap:</p>
+        <ul>
+          <li><strong>Apple HIG</strong> recommends at least 44×44px; <strong>Microsoft</strong> suggests 34px (26px minimum); <strong>Nokia</strong> no smaller than 1×1 cm (~28px).</li>
+          <li><strong>Fitts’s Law:</strong> the smaller the target, the more time and attention it takes to hit it.</li>
+          <li>The index finger averages 16–20 mm (~45–57px) and the thumb ~2.5 cm (~72–75px). <strong>MIT Touch Lab</strong>: fingertips are 8–10 mm, making 10×10 mm a sensible minimum.</li>
+          <li>Keep <strong>≥ 10px between targets</strong> to avoid accidental taps.</li>
+        </ul>
+        <p>Note: these studies used non-Vietnamese participants, so they serve as benchmarks when checked against the SDS button scale. Below, every target is drawn at 1:1 on a fingertip.</p></div>
+      </div>
+    </div>
+<div class="touch reveal">
+  <div class="touch-head"><b><span lang="vi">Vùng chạm trên đầu ngón tay — tỉ lệ 1:1</span><span lang="en">Touch targets on a fingertip — 1:1 scale</span></b>
+    <span><i class="lg-b"></i><span lang="vi">Mốc từ nghiên cứu</span><span lang="en">Research benchmark</span></span>
+    <span><i class="lg-s"></i><span lang="vi">Kích thước button trong SDS</span><span lang="en">SDS button size</span></span></div>
+  <div class="touch-row"><div class="touch-t"><svg class="finger" width="65" height="114" viewBox="-4.0 0 65 114" aria-hidden="true">
+  <defs><linearGradient id="fg57260" x1="0" x2="1"><stop offset="0" stop-color="#e9b49b"/><stop offset=".45" stop-color="#f6d2bf"/><stop offset="1" stop-color="#e2a98f"/></linearGradient></defs>
+  <path d="M0 114 V28.5 A28.5 28.5 0 0 1 57 28.5 V114 Z" fill="url(#fg57260)"/>
+  <path d="M11.4 63.84 q17.099999999999998 7 34.199999999999996 0" stroke="#cf9479" stroke-width="1.2" fill="none" opacity=".55"/>
+  <ellipse cx="28.5" cy="17.669999999999998" rx="17.669999999999998" ry="14.25" fill="#fbe7dd" opacity=".75"/>
+  <path d="M12.540000000000001 84.36 q15.96 6 31.92 0 M14.82 91.2 q13.68 5 27.36 0" stroke="#cf9479" stroke-width="1.2" fill="none" opacity=".7"/>
+  <rect x="15.5" y="9.0" width="26" height="26" rx="6" fill="rgba(255,255,255,.35)" stroke="#3360ff" stroke-width="1.5" stroke-dasharray="4 3"/>
+</svg><b>26px</b><span><span lang="vi">Microsoft — tối thiểu</span><span lang="en">Microsoft — minimum</span></span></div><div class="touch-t"><svg class="finger" width="65" height="114" viewBox="-4.0 0 65 114" aria-hidden="true">
+  <defs><linearGradient id="fg57280" x1="0" x2="1"><stop offset="0" stop-color="#e9b49b"/><stop offset=".45" stop-color="#f6d2bf"/><stop offset="1" stop-color="#e2a98f"/></linearGradient></defs>
+  <path d="M0 114 V28.5 A28.5 28.5 0 0 1 57 28.5 V114 Z" fill="url(#fg57280)"/>
+  <path d="M11.4 63.84 q17.099999999999998 7 34.199999999999996 0" stroke="#cf9479" stroke-width="1.2" fill="none" opacity=".55"/>
+  <ellipse cx="28.5" cy="17.669999999999998" rx="17.669999999999998" ry="14.25" fill="#fbe7dd" opacity=".75"/>
+  <path d="M12.540000000000001 84.36 q15.96 6 31.92 0 M14.82 91.2 q13.68 5 27.36 0" stroke="#cf9479" stroke-width="1.2" fill="none" opacity=".7"/>
+  <rect x="14.5" y="8.0" width="28" height="28" rx="6" fill="rgba(255,255,255,.35)" stroke="#3360ff" stroke-width="1.5" stroke-dasharray="4 3"/>
+</svg><b>28px</b><span><span lang="vi">Nokia — 1×1 cm</span><span lang="en">Nokia — 1×1 cm</span></span></div><div class="touch-t"><svg class="finger" width="65" height="114" viewBox="-4.0 0 65 114" aria-hidden="true">
+  <defs><linearGradient id="fg57340" x1="0" x2="1"><stop offset="0" stop-color="#e9b49b"/><stop offset=".45" stop-color="#f6d2bf"/><stop offset="1" stop-color="#e2a98f"/></linearGradient></defs>
+  <path d="M0 114 V28.5 A28.5 28.5 0 0 1 57 28.5 V114 Z" fill="url(#fg57340)"/>
+  <path d="M11.4 63.84 q17.099999999999998 7 34.199999999999996 0" stroke="#cf9479" stroke-width="1.2" fill="none" opacity=".55"/>
+  <ellipse cx="28.5" cy="17.669999999999998" rx="17.669999999999998" ry="14.25" fill="#fbe7dd" opacity=".75"/>
+  <path d="M12.540000000000001 84.36 q15.96 6 31.92 0 M14.82 91.2 q13.68 5 27.36 0" stroke="#cf9479" stroke-width="1.2" fill="none" opacity=".7"/>
+  <rect x="11.5" y="5.0" width="34" height="34" rx="6" fill="rgba(255,255,255,.35)" stroke="#3360ff" stroke-width="1.5" stroke-dasharray="4 3"/>
+</svg><b>34px</b><span><span lang="vi">Microsoft — khuyến nghị</span><span lang="en">Microsoft — recommended</span></span></div><div class="touch-t"><svg class="finger" width="65" height="114" viewBox="-4.0 0 65 114" aria-hidden="true">
+  <defs><linearGradient id="fg57401" x1="0" x2="1"><stop offset="0" stop-color="#e9b49b"/><stop offset=".45" stop-color="#f6d2bf"/><stop offset="1" stop-color="#e2a98f"/></linearGradient></defs>
+  <path d="M0 114 V28.5 A28.5 28.5 0 0 1 57 28.5 V114 Z" fill="url(#fg57401)"/>
+  <path d="M11.4 63.84 q17.099999999999998 7 34.199999999999996 0" stroke="#cf9479" stroke-width="1.2" fill="none" opacity=".55"/>
+  <ellipse cx="28.5" cy="17.669999999999998" rx="17.669999999999998" ry="14.25" fill="#fbe7dd" opacity=".75"/>
+  <path d="M12.540000000000001 84.36 q15.96 6 31.92 0 M14.82 91.2 q13.68 5 27.36 0" stroke="#cf9479" stroke-width="1.2" fill="none" opacity=".7"/>
+  <rect x="8.5" y="4.0" width="40" height="40" rx="6" fill="rgba(20,30,210,.72)"/>
+</svg><b>40px</b><span><span lang="vi">SDS button S</span><span lang="en">SDS button S</span></span></div><div class="touch-t"><svg class="finger" width="65" height="114" viewBox="-4.0 0 65 114" aria-hidden="true">
+  <defs><linearGradient id="fg57440" x1="0" x2="1"><stop offset="0" stop-color="#e9b49b"/><stop offset=".45" stop-color="#f6d2bf"/><stop offset="1" stop-color="#e2a98f"/></linearGradient></defs>
+  <path d="M0 114 V28.5 A28.5 28.5 0 0 1 57 28.5 V114 Z" fill="url(#fg57440)"/>
+  <path d="M11.4 63.84 q17.099999999999998 7 34.199999999999996 0" stroke="#cf9479" stroke-width="1.2" fill="none" opacity=".55"/>
+  <ellipse cx="28.5" cy="17.669999999999998" rx="17.669999999999998" ry="14.25" fill="#fbe7dd" opacity=".75"/>
+  <path d="M12.540000000000001 84.36 q15.96 6 31.92 0 M14.82 91.2 q13.68 5 27.36 0" stroke="#cf9479" stroke-width="1.2" fill="none" opacity=".7"/>
+  <rect x="6.5" y="4.0" width="44" height="44" rx="6" fill="rgba(255,255,255,.35)" stroke="#3360ff" stroke-width="1.5" stroke-dasharray="4 3"/>
+</svg><b>44px</b><span><span lang="vi">Apple HIG — tối thiểu</span><span lang="en">Apple HIG — minimum</span></span></div><div class="touch-t"><svg class="finger" width="65" height="114" viewBox="-4.0 0 65 114" aria-hidden="true">
+  <defs><linearGradient id="fg57561" x1="0" x2="1"><stop offset="0" stop-color="#e9b49b"/><stop offset=".45" stop-color="#f6d2bf"/><stop offset="1" stop-color="#e2a98f"/></linearGradient></defs>
+  <path d="M0 114 V28.5 A28.5 28.5 0 0 1 57 28.5 V114 Z" fill="url(#fg57561)"/>
+  <path d="M11.4 63.84 q17.099999999999998 7 34.199999999999996 0" stroke="#cf9479" stroke-width="1.2" fill="none" opacity=".55"/>
+  <ellipse cx="28.5" cy="17.669999999999998" rx="17.669999999999998" ry="14.25" fill="#fbe7dd" opacity=".75"/>
+  <path d="M12.540000000000001 84.36 q15.96 6 31.92 0 M14.82 91.2 q13.68 5 27.36 0" stroke="#cf9479" stroke-width="1.2" fill="none" opacity=".7"/>
+  <rect x="0.5" y="4.0" width="56" height="56" rx="6" fill="rgba(20,30,210,.72)"/>
+</svg><b>56px</b><span><span lang="vi">SDS button M</span><span lang="en">SDS button M</span></span></div><div class="touch-t"><svg class="finger" width="65" height="114" viewBox="-4.0 0 65 114" aria-hidden="true">
+  <defs><linearGradient id="fg57570" x1="0" x2="1"><stop offset="0" stop-color="#e9b49b"/><stop offset=".45" stop-color="#f6d2bf"/><stop offset="1" stop-color="#e2a98f"/></linearGradient></defs>
+  <path d="M0 114 V28.5 A28.5 28.5 0 0 1 57 28.5 V114 Z" fill="url(#fg57570)"/>
+  <path d="M11.4 63.84 q17.099999999999998 7 34.199999999999996 0" stroke="#cf9479" stroke-width="1.2" fill="none" opacity=".55"/>
+  <ellipse cx="28.5" cy="17.669999999999998" rx="17.669999999999998" ry="14.25" fill="#fbe7dd" opacity=".75"/>
+  <path d="M12.540000000000001 84.36 q15.96 6 31.92 0 M14.82 91.2 q13.68 5 27.36 0" stroke="#cf9479" stroke-width="1.2" fill="none" opacity=".7"/>
+  <rect x="0.0" y="4.0" width="57" height="57" rx="6" fill="rgba(255,255,255,.35)" stroke="#3360ff" stroke-width="1.5" stroke-dasharray="4 3"/>
+</svg><b>57px</b><span><span lang="vi">Vừa khít ngón trỏ</span><span lang="en">Fits the index finger</span></span></div><div class="touch-t"><svg class="finger" width="80" height="122" viewBox="-4.0 0 80 122" aria-hidden="true">
+  <defs><linearGradient id="fg72720" x1="0" x2="1"><stop offset="0" stop-color="#e9b49b"/><stop offset=".45" stop-color="#f6d2bf"/><stop offset="1" stop-color="#e2a98f"/></linearGradient></defs>
+  <path d="M0 122 V36.0 A36.0 36.0 0 0 1 72 36.0 V122 Z" fill="url(#fg72720)"/>
+  <path d="M14.4 68.32000000000001 q21.599999999999998 7 43.199999999999996 0" stroke="#cf9479" stroke-width="1.2" fill="none" opacity=".55"/>
+  <ellipse cx="36.0" cy="22.32" rx="22.32" ry="18.0" fill="#fbe7dd" opacity=".75"/>
+  <path d="M15.84 90.28 q20.160000000000004 6 40.32000000000001 0 M18.72 97.60000000000001 q17.28 5 34.56 0" stroke="#cf9479" stroke-width="1.2" fill="none" opacity=".7"/>
+  <rect x="0.0" y="4.0" width="72" height="72" rx="6" fill="rgba(255,255,255,.35)" stroke="#3360ff" stroke-width="1.5" stroke-dasharray="4 3"/>
+</svg><b>72px</b><span><span lang="vi">Vừa khít ngón cái</span><span lang="en">Fits the thumb</span></span></div></div>
+  <div class="touch-cards">
+    <div class="touch-card"><svg class="hand" viewBox="0 0 320 300" role="img" aria-label="Illustration: a raised index finger with a 10 mm fingertip target, compared with an 18 mm coin and a 15 mm key">
+  <defs><linearGradient id="skin" x1="0" x2="1"><stop offset="0" stop-color="#e7b096"/><stop offset=".5" stop-color="#f4cdb9"/><stop offset="1" stop-color="#dfa489"/></linearGradient></defs>
+  <g transform="translate(18 18)">
+    <circle cx="22" cy="22" r="22" fill="#d9dce3" stroke="#9aa1bc" stroke-width="2"/><circle cx="22" cy="22" r="15" fill="none" stroke="#b6bbc9" stroke-width="1.5"/>
+    <text x="22" y="62" text-anchor="middle" class="hl">18mm</text>
+  </g>
+  <g transform="translate(92 22)">
+    <rect width="36" height="36" rx="7" fill="#2b2d33"/><rect x="4" y="3" width="28" height="26" rx="5" fill="#3a3d45"/>
+    <path d="M18 10 l7 8 h-4 v6 h-6 v-6 h-4z" fill="#d7d9de"/>
+    <text x="18" y="54" text-anchor="middle" class="hl">15mm</text>
+  </g>
+  <path d="M152 300 V196 c0-14 -6-22 -18-24 c-16-3 -26 8 -26 22 v8 c-12-6 -26 0 -26 14 v40 c0 26 18 44 44 44z" fill="url(#skin)" opacity=".001"/>
+  <rect x="150" y="262" width="96" height="40" rx="14" fill="url(#skin)"/>
+  <rect x="136" y="170" width="120" height="110" rx="34" fill="url(#skin)"/>
+  <rect x="132" y="168" width="30" height="58" rx="15" fill="url(#skin)" stroke="#d29a80" stroke-width="1.2"/>
+  <rect x="160" y="160" width="30" height="62" rx="15" fill="url(#skin)" stroke="#d29a80" stroke-width="1.2"/>
+  <rect x="188" y="156" width="30" height="66" rx="15" fill="url(#skin)" stroke="#d29a80" stroke-width="1.2"/>
+  <rect x="216" y="44" width="32" height="178" rx="16" fill="url(#skin)" stroke="#d29a80" stroke-width="1.2"/>
+  <path d="M222 120 q10 4 20 0 M222 160 q10 4 20 0" stroke="#cf9479" stroke-width="1.4" fill="none"/>
+  <ellipse cx="232" cy="60" rx="10" ry="9" fill="#fbe7dd" opacity=".8"/>
+  <circle cx="232" cy="50" r="12" fill="#e2459a"/>
+  <text x="252" y="54" class="hl">10mm</text>
+</svg><div><b>MIT Touch Lab</b><p><span lang="vi">Miếng đệm ngón tay rộng 10–14 mm, đầu ngón tay 8–10 mm → <strong>10×10 mm</strong> là vùng chạm tối thiểu phù hợp — nhỏ hơn cả một phím bàn phím (15 mm) hay đồng xu (18 mm).</span><span lang="en">Finger pads are 10–14 mm wide and fingertips 8–10 mm → <strong>10×10 mm</strong> is a sensible minimum target — smaller than a keyboard key (15 mm) or a coin (18 mm).</span></p></div></div>
+    <div class="touch-card gap"><div class="touch-gap"><i></i><em>≥ 10px</em><i></i></div><div><b><span lang="vi">Khoảng cách tối thiểu</span><span lang="en">Minimum spacing</span></b><p><span lang="vi">Giữ tối thiểu 10px giữa hai vùng chạm để tránh bấm nhầm khi ngón tay lớn hơn chính nút bấm.</span><span lang="en">Keep at least 10px between two targets to prevent mis-taps when the finger is bigger than the button.</span></p></div></div>
+  </div>
+</div>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">03 — Phương pháp</span><span lang="en">03 — Method</span></small><span lang="vi">Atomic Design × Master Component</span><span lang="en">Atomic Design × Master Components</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p>SDS được xây theo <strong>Atomic Design</strong> (Tokens → Atoms → Molecules → Organisms → Templates → Pages) kết hợp với <strong>Master Component</strong>:</p>
+        <ul>
+          <li>Mỗi họ component có <strong>một master ẩn</strong> chứa cấu trúc, auto layout, slot icon và token. Các biến thể công khai đều là instance của master đó.</li>
+          <li>Sửa master một lần — padding, radius, state, token — mọi biến thể <strong>tự cập nhật đồng loạt</strong>, không phải sửa tay từng component.</li>
+          <li>Atoms (icon, label, surface) ghép thành master; master sinh ra molecules; molecules ghép thành organisms như alert, modal, bottom sheet, topbar.</li>
+        </ul>
+        <p>Hai ví dụ dưới đây lấy từ chính danh sách token của SDS: 5 loại button và 5 loại input cùng sinh ra từ 2 master.</p></div>
+        <div lang="en"><p>SDS was built with <strong>Atomic Design</strong> (Tokens → Atoms → Molecules → Organisms → Templates → Pages) combined with <strong>Master Components</strong>:</p>
+        <ul>
+          <li>Each component family has <strong>one hidden master</strong> holding the structure, auto layout, icon slots and tokens. Every public variant is an instance of it.</li>
+          <li>Edit the master once — padding, radius, states, tokens — and <strong>every variant updates together</strong>, with no manual edits.</li>
+          <li>Atoms (icon, label, surface) compose the master; masters produce molecules; molecules form organisms such as alerts, modals, bottom sheets and top bars.</li>
+        </ul>
+        <p>The two examples below come straight from SDS’s token list: five button types and five input types, each generated from a single master.</p></div>
+      </div>
+    </div>
+<div class="masters"><div class="master reveal"><div class="master-head"><span class="dia"><span>◆</span></span><div><small><span lang="vi">Master component</span><span lang="en">Master component</span></small><code>_button (master)</code></div></div><ul><li><code>button_standard</code><span><span lang="vi">Primary · Secondary · Ghost</span><span lang="en">Primary · Secondary · Ghost</span></span></li><li><code>button_icon</code><span><span lang="vi">Chỉ có icon</span><span lang="en">Icon only</span></span></li><li><code>button_text</code><span><span lang="vi">Dạng link / text</span><span lang="en">Link / text</span></span></li><li><code>button_floating</code><span><span lang="vi">Nút nổi (FAB)</span><span lang="en">Floating (FAB)</span></span></li><li><code>button_swipe</code><span><span lang="vi">Vuốt để xác nhận</span><span lang="en">Swipe to confirm</span></span></li></ul></div><div class="master reveal"><div class="master-head"><span class="dia"><span>◆</span></span><div><small><span lang="vi">Master component</span><span lang="en">Master component</span></small><code>_input (master)</code></div></div><ul><li><code>input_normal</code><span><span lang="vi">Nhập liệu cơ bản</span><span lang="en">Basic field</span></span></li><li><code>input_number</code><span><span lang="vi">Số, số tiền</span><span lang="en">Numbers, amounts</span></span></li><li><code>input_PIN</code><span><span lang="vi">Mã PIN / OTP</span><span lang="en">PIN / OTP</span></span></li><li><code>search</code><span><span lang="vi">Tìm kiếm</span><span lang="en">Search</span></span></li><li><code>text_area</code><span><span lang="vi">Nhiều dòng</span><span lang="en">Multi-line</span></span></li></ul></div></div>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">04 — Design tokens</span><span lang="en">04 — Design tokens</span></small><span lang="vi">Kiến trúc token 3 tầng</span><span lang="en">A three-tier token architecture</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p>Token là “nguồn sự thật” duy nhất cho mọi quyết định thị giác. Mình tách token thành 3 tầng để thay đổi ở một chỗ mà không phá vỡ chỗ khác:</p>
+        <ul>
+          <li><strong>Global / Primitive</strong> — giá trị thô như <code>green/11</code>, <code>spacing-md</code>, <code>radius-sm</code>. Không component nào dùng trực tiếp tầng này.</li>
+          <li><strong>Alias / Semantic</strong> — đặt tên theo mục đích: <code>surface/highlight</code>, <code>icon/semantic/success</code>. Đổi theme chỉ cần đổi tầng này.</li>
+          <li><strong>Component</strong> — gắn vào từng component theo variant và state, ví dụ <code>button_standard/primary/pressed/surface</code>.</li>
+        </ul></div>
+        <div lang="en"><p>Tokens are the single source of truth for every visual decision. I split them into three tiers so a change in one place never breaks another:</p>
+        <ul>
+          <li><strong>Global / Primitive</strong> — raw values like <code>green/11</code>, <code>spacing-md</code>, <code>radius-sm</code>. No component uses this tier directly.</li>
+          <li><strong>Alias / Semantic</strong> — named by intent: <code>surface/highlight</code>, <code>icon/semantic/success</code>. Re-theming only touches this tier.</li>
+          <li><strong>Component</strong> — bound to each component by variant and state, e.g. <code>button_standard/primary/pressed/surface</code>.</li>
+        </ul></div>
+      </div>
+    </div>
+<div class="tiers"><div class="tier reveal"><header><span class="k"><span lang="vi">Tầng 1</span><span lang="en">Tier 1</span></span><h4>Global / Primitive</h4><p><span lang="vi">Giá trị thô, không mang ngữ nghĩa — bảng màu, spacing, radius, typography.</span><span lang="en">Raw values with no meaning attached — palette, spacing, radius, type.</span></p></header><div class="tok"><i style="--c:#e3ffed"></i><code>green/2</code><span>#E3FFED</span></div><div class="tok"><i style="--c:#32a06e"></i><code>green/11</code><span>#32A06E</span></div><div class="tok"><i>4</i><code>spacing-xs</code><span>4</span></div><div class="tok"><i>8</i><code>spacing-md</code><span>8</span></div><div class="tok"><i>r</i><code>radius-sm</code><span>6</span></div><div class="tok"><i>Aa</i><code>typo/font-size/lg</code><span>16</span></div></div><div class="tier reveal"><header><span class="k"><span lang="vi">Tầng 2</span><span lang="en">Tier 2</span></span><h4>Alias / Semantic</h4><p><span lang="vi">Đặt tên theo mục đích sử dụng, tham chiếu tới tầng global.</span><span lang="en">Named by intent, referencing the global tier.</span></p></header><div class="tok"><i style="--c:#dee0fc"></i><code>color/alias/surface/highlight/lighter</code><span>#DEE0FC</span></div><div class="tok"><i style="--c:#fdfdfd"></i><code>color/alias/surface/neutral/default</code><span>#FDFDFD</span></div><div class="tok"><i style="--c:#0071e9"></i><code>icon/semantic/brand</code><span>#0071E9</span></div><div class="tok"><i style="--c:#1fb266"></i><code>icon_semantic/success</code><span>#1FB266</span></div><div class="tok"><i style="--c:#eb2d4b"></i><code>icon_semantic/error</code><span>#EB2D4B</span></div></div><div class="tier reveal"><header><span class="k"><span lang="vi">Tầng 3</span><span lang="en">Tier 3</span></span><h4>Component</h4><p><span lang="vi">Gắn trực tiếp vào component, theo variant và state.</span><span lang="en">Bound directly to a component, per variant and state.</span></p></header><div class="tok"><i style="--c:#141dd2"></i><code>button_standard/primary/default/surface</code><span>#141DD2</span></div><div class="tok"><i style="--c:#0f17a3"></i><code>button_standard/primary/pressed/surface</code><span>#0F17A3</span></div><div class="tok"><i style="--c:#9a9cbc"></i><code>button_standard/primary/disabled/surface</code><span>#9A9CBC</span></div><div class="tok"><i style="--c:#141dd2"></i><code>button_standard/secondary/default/border</code><span>#141DD2</span></div><div class="tok"><i>r</i><code>component/button/radius</code><span>8</span></div></div></div>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">05 — Component token</span><span lang="en">05 — Component tokens</span></small><span lang="vi">Mỗi state, mỗi thuộc tính đều có token</span><span lang="en">A token for every state and property</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p>Tầng component được tài liệu hoá thành một bảng token đầy đủ: mỗi component được chia theo <strong>state</strong> (enabled, disabled, information, success…) và mỗi thuộc tính (<code>surface</code>, <code>icon</code>, <code>title</code>, <code>sub</code>, <code>border</code>) trỏ tới một <strong>alias token</strong>.</p>
+        <ul>
+          <li><strong>35</strong> họ component — từ calendar, checkbox, alert, modal, bottom sheet đến button, input, tabs, stepper, date picker.</li>
+          <li><strong>148</strong> nhóm state và khoảng <strong>750+</strong> token component.</li>
+          <li>Mỗi token có 2 cột <strong>light / dark</strong>: light đã map xong vào alias, cột dark đã sẵn cấu trúc để triển khai dark mode.</li>
+        </ul></div>
+        <div lang="en"><p>The component tier is documented as a complete token table: each component is split by <strong>state</strong> (enabled, disabled, information, success…) and every property (<code>surface</code>, <code>icon</code>, <code>title</code>, <code>sub</code>, <code>border</code>) points to an <strong>alias token</strong>.</p>
+        <ul>
+          <li><strong>35</strong> component families — from calendar, checkbox, alert, modal and bottom sheet to button, input, tabs, stepper and date picker.</li>
+          <li><strong>148</strong> state groups and roughly <strong>750+</strong> component tokens.</li>
+          <li>Every token has <strong>light / dark</strong> columns: light is fully mapped to aliases, and the dark column is structured and ready for dark mode.</li>
+        </ul></div>
+      </div>
+    </div>
+<figure class="figure reveal" style="--tint:#ffffff"><div class="wrap"><img src="assets/img/sds_tokens.jpg" alt="Component token table: checkbox and alert tokens mapped to alias tokens for light and dark" loading="lazy"></div><figcaption><span lang="vi">Trích bảng component token — checkbox, alert information, alert success</span><span lang="en">Excerpt of the component token table — checkbox, alert information, alert success</span></figcaption></figure>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">06 — Quy tắc đặt tên</span><span lang="en">06 — Naming</span></small><span lang="vi">Đọc tên là biết dùng ở đâu</span><span lang="en">The name tells you where it goes</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p>Token component được đặt tên theo cấu trúc <strong>component / variant / state / property</strong>. Developer đọc tên là map được ngay sang code, designer không phải đoán màu nào dùng cho trạng thái nào.</p></div>
+        <div lang="en"><p>Component tokens follow a <strong>component / variant / state / property</strong> structure. Developers can map a name straight to code, and designers never have to guess which colour belongs to which state.</p></div>
+      </div>
+    </div>
+<div class="tok-name reveal">
+  <b><small>Component</small>button_standard</b><em>/</em>
+  <b><small>Variant</small>primary</b><em>/</em>
+  <b><small>State</small>pressed</b><em>/</em>
+  <b><small>Property</small>surface</b>
+</div>
+<div class="specimen reveal" role="img" aria-label="Button variants and states rendered from component tokens">
+  <table>
+    <thead><tr><th>Variant</th><th>Default</th><th>Pressed</th><th>Disabled</th><th>Loading</th></tr></thead>
+    <tbody><tr><td>primary</td><td><span class="ds-btn" style="--s:#141dd2;--b:#141dd2;--t:#ffffff">Button</span><span class="hex">surface #141dd2 · title #ffffff</span></td><td><span class="ds-btn" style="--s:#0f17a3;--b:#0f17a3;--t:#ffffff">Button</span><span class="hex">surface #0f17a3 · title #ffffff</span></td><td><span class="ds-btn" style="--s:#9a9cbc;--b:#9a9cbc;--t:#ffffff">Button</span><span class="hex">surface #9a9cbc · title #ffffff</span></td><td><span class="ds-btn" style="--s:#141dd2;--b:#141dd2;--t:#ffffff;opacity:.45"><span class="spin" aria-hidden="true"></span>Button</span><span class="hex">state = loading</span></td></tr><tr><td>secondary</td><td><span class="ds-btn" style="--s:transparent;--b:#141dd2;--t:#141dd2">Button</span><span class="hex">surface transparent · title #141dd2</span></td><td><span class="ds-btn" style="--s:#00000033;--b:#0f17a3;--t:#0f17a3">Button</span><span class="hex">surface #00000033 · title #0f17a3</span></td><td><span class="ds-btn" style="--s:#ffffff05;--b:#b6b7c9;--t:#9899b2">Button</span><span class="hex">surface #ffffff05 · title #9899b2</span></td><td><span class="ds-btn" style="--s:transparent;--b:#141dd2;--t:#141dd2;opacity:.45"><span class="spin" aria-hidden="true"></span>Button</span><span class="hex">state = loading</span></td></tr><tr><td>ghost</td><td><span class="ds-btn" style="--s:transparent;--b:transparent;--t:#141dd2">Button</span><span class="hex">surface transparent · title #141dd2</span></td><td><span class="ds-btn" style="--s:#00000033;--b:transparent;--t:#0f17a3">Button</span><span class="hex">surface #00000033 · title #0f17a3</span></td><td><span class="ds-btn" style="--s:#ffffff05;--b:transparent;--t:#9899b2">Button</span><span class="hex">surface #ffffff05 · title #9899b2</span></td><td><span class="ds-btn" style="--s:transparent;--b:transparent;--t:#141dd2;opacity:.45"><span class="spin" aria-hidden="true"></span>Button</span><span class="hex">state = loading</span></td></tr></tbody>
+  </table>
+</div><p class="label" style="margin-top:12px"><span lang="vi">Button bên trên được render trực tiếp từ giá trị token trong Figma.</span><span lang="en">The buttons above are rendered directly from the token values in Figma.</span></p>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">07 — Foundation</span><span lang="en">07 — Foundation</span></small><span lang="vi">Size, typography, elevation</span><span lang="en">Size, typography, elevation</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p>Button có 3 size: <strong>XS (24px)</strong>, <strong>S (40px)</strong> và <strong>M (56px)</strong>, padding chuẩn <strong>20px</strong> trên/dưới và <strong>24px</strong> trái/phải, bo góc lấy từ <code>component/button/radius = 8</code>.</p>
+        <p>Typography dùng Inter với thang <code>title/size-xs → xl</code> (12/18 đến 20/28, semibold). Elevation có <code>shadow/E1</code> cho card và <code>E-CTA</code> riêng cho nút hành động.</p></div>
+        <div lang="en"><p>Buttons come in 3 sizes: <strong>XS (24px)</strong>, <strong>S (40px)</strong> and <strong>M (56px)</strong>, with standard padding of <strong>20px</strong> top/bottom and <strong>24px</strong> left/right, and corner radius from <code>component/button/radius = 8</code>.</p>
+        <p>Typography uses Inter on a <code>title/size-xs → xl</code> scale (12/18 to 20/28, semibold). Elevation has <code>shadow/E1</code> for cards and a dedicated <code>E-CTA</code> for action buttons.</p></div>
+      </div>
+    </div>
+<div class="cards" style="--cols:2"><div class="cardx reveal"><span class="k">Button size</span><div class="scale"><div class="scale-row"><code>XS</code><div class="bar" style="--h:24px;width:50%">24px</div><code>H = 24px</code></div><div class="scale-row"><code>S</code><div class="bar" style="--h:40px;width:75%">40px</div><code>H = 40px</code></div><div class="scale-row"><code>M</code><div class="bar" style="--h:56px;width:100%">56px</div><code>H = 56px</code></div></div></div><div class="cardx reveal"><span class="k">Typography — title / semibold</span><div class="scale"><div class="scale-row"><code>xs</code><span class="sample" style="--fs:12px;--lh:18px">Tiếp tục — Continue</span><code>12 / 18 · 600</code></div><div class="scale-row"><code>s</code><span class="sample" style="--fs:14px;--lh:22px">Tiếp tục — Continue</span><code>14 / 22 · 600</code></div><div class="scale-row"><code>m</code><span class="sample" style="--fs:16px;--lh:24px">Tiếp tục — Continue</span><code>16 / 24 · 600</code></div><div class="scale-row"><code>l</code><span class="sample" style="--fs:18px;--lh:28px">Tiếp tục — Continue</span><code>18 / 28 · 600</code></div><div class="scale-row"><code>xl</code><span class="sample" style="--fs:20px;--lh:28px">Tiếp tục — Continue</span><code>20 / 28 · 600</code></div></div></div></div>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">08 — Documentation</span><span lang="en">08 — Documentation</span></small><span lang="vi">Một template, sáu phần, mọi component</span><span lang="en">One template, six parts, every component</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p>Mỗi component có một trang tài liệu theo cùng template, mở đầu bằng trang bìa ghi <strong>tên, tag (Entry · CTA · Navigation), ngày cập nhật, version và trạng thái</strong> — để mọi người biết mình đang đọc bản nào và đã hoàn thiện chưa.</p>
+        <p>Phần <strong>Usage</strong> không chỉ định nghĩa component mà còn có <strong>Do / Don’t</strong> bằng hình: ví dụ không đặt hai Primary button cạnh nhau, hành động phụ dùng Secondary hoặc Tertiary.</p></div>
+        <div lang="en"><p>Every component gets a doc page from the same template, opening with a cover showing <strong>name, tags (Entry · CTA · Navigation), last update, version and status</strong> — so readers know which version they’re on and whether it’s final.</p>
+        <p><strong>Usage</strong> goes beyond a definition with visual <strong>Do / Don’t</strong> examples: never two Primary buttons side by side; supporting actions use Secondary or Tertiary.</p></div>
+      </div>
+    </div>
+<div class="doc-toc"><div class="reveal"><b>01</b><h4>Usage</h4><p><span lang="vi">Định nghĩa, mục đích, lưu ý, liên kết.</span><span lang="en">Definition, purpose, do / don’t, context.</span></p></div><div class="reveal"><b>02</b><h4>Anatomy</h4><p><span lang="vi">Các phần tử cấu thành và thuộc tính.</span><span lang="en">Parts and their properties.</span></p></div><div class="reveal"><b>03</b><h4>Measurement</h4><p><span lang="vi">Kích thước, padding, khoảng cách.</span><span lang="en">Sizes, padding, spacing.</span></p></div><div class="reveal"><b>04</b><h4>Variant</h4><p><span lang="vi">State và size được gom nhóm.</span><span lang="en">Grouped states and sizes.</span></p></div><div class="reveal"><b>05</b><h4>Behavior</h4><p><span lang="vi">Tương tác và phản hồi trạng thái.</span><span lang="en">Interaction and state feedback.</span></p></div><div class="reveal"><b>06</b><h4>Figma properties</h4><p><span lang="vi">Property để dev & designer dùng đúng.</span><span lang="en">Properties so teams use it right.</span></p></div></div>
+<figure class="figure reveal" style="--tint:#ffffff"><div class="wrap"><img src="assets/img/ds_usage.jpg" alt="Usage section of the button documentation" loading="lazy"></div><figcaption><span lang="vi">Usage — định nghĩa, mục đích, lưu ý và Do / Don’t</span><span lang="en">Usage — definition, purpose, notes and Do / Don’t</span></figcaption></figure>
+<div class="figure-row" style="--cols:2"><figure class="figure reveal" style="--r:1.765;--tint:#ffffff"><div class="wrap"><img src="assets/img/ds_anatomy.jpg" alt="Anatomy section" loading="lazy"></div><figcaption><span lang="vi">Anatomy — 5 phần tử: Surface, Border, Leading icon, Title, Trailing icon</span><span lang="en">Anatomy — 5 parts: Surface, Border, Leading icon, Title, Trailing icon</span></figcaption></figure><figure class="figure reveal" style="--r:1.358;--tint:#ffffff"><div class="wrap"><img src="assets/img/ds_measure.jpg" alt="Measurement section" loading="lazy"></div><figcaption><span lang="vi">Measurement — kích thước và padding cho từng variant</span><span lang="en">Measurement — sizes and padding per variant</span></figcaption></figure></div>
+<figure class="figure reveal" style="--tint:#ffffff"><div class="wrap"><img src="assets/img/ds_variant.jpg" alt="Variant section" loading="lazy"></div><figcaption><span lang="vi">Variant — state (default, pressed, disabled, loading) và size</span><span lang="en">Variant — states (default, pressed, disabled, loading) and sizes</span></figcaption></figure>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">09 — Vận hành</span><span lang="en">09 — Operations</span></small><span lang="vi">Quản lý component như một backlog</span><span lang="en">Managing components like a backlog</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><p>Toàn bộ component được quản lý trong một <strong>bảng theo dõi</strong>, mỗi component đi qua 5 cột tiến độ: <strong>Reference</strong> (nghiên cứu tham chiếu) → <strong>UI Design</strong> → <strong>Token</strong> → <strong>Document</strong>, kèm <strong>version</strong> và <strong>nền tảng áp dụng</strong> (Mobile / Web / All).</p>
+        <p>Nhờ bảng này, cả team biết component nào đã sẵn sàng để dùng, component nào đang review và phần nào còn thiếu tài liệu — ví dụ nhóm component cho web (Breadcrumbs, Combobox, Pagination…) đang được lên kế hoạch cho giai đoạn tiếp theo.</p>
+        <p style="color:var(--ink-3)">Bảng dưới là trích đoạn component #10–#36.</p></div>
+        <div lang="en"><p>Every component is tracked in a <strong>component list</strong> and moves through five progress columns: <strong>Reference</strong> (benchmark research) → <strong>UI Design</strong> → <strong>Token</strong> → <strong>Document</strong>, plus its <strong>version</strong> and <strong>target platform</strong> (Mobile / Web / All).</p>
+        <p>The list tells the whole team which components are ready to use, which are in review and which still lack docs — for example, the web-only set (Breadcrumbs, Combobox, Pagination…) is planned for the next phase.</p>
+        <p style="color:var(--ink-3)">The table below is an excerpt, components #10–#36.</p></div>
+      </div>
+    </div>
+<div class="cl-summary"><div class="reveal"><b>21/27</b><span><span lang="vi">UI Design done</span><span lang="en">UI design done</span></span><div class="bar"><i style="--p:78%"></i></div></div><div class="reveal"><b>21/27</b><span><span lang="vi">Token done</span><span lang="en">Tokens done</span></span><div class="bar"><i style="--p:78%"></i></div></div><div class="reveal"><b>11/27</b><span><span lang="vi">Reference done</span><span lang="en">Reference done</span></span><div class="bar"><i style="--p:41%"></i></div></div><div class="reveal"><b>2/27</b><span><span lang="vi">Document đang review</span><span lang="en">Docs in review</span></span><div class="bar"><i style="--p:7%"></i></div></div></div>
+<div class="cl-wrap reveal"><table class="cl"><thead><tr><th></th><th>Component</th><th>Ver</th><th>Reference</th><th>UI Design</th><th>Token</th><th>Document</th><th>Device</th></tr></thead><tbody><tr><td class="n">10</td><td>Floating Button</td><td class="v">1.0</td><td><span class="pill ">Todo</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill empty">—</span></td><td><span class="pill empty">—</span></td></tr><tr><td class="n">11</td><td>Header/Top bar</td><td class="v">1.0</td><td><span class="pill prog">in progress</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill ">Todo</span></td><td><span class="pill dev-mobile">Mobile</span></td></tr><tr><td class="n">12</td><td>Input</td><td class="v">1.0</td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">All</span></td></tr><tr><td class="n">13</td><td>PIN input</td><td class="v">1.0</td><td><span class="pill ">Todo</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill empty">—</span></td><td><span class="pill empty">—</span></td></tr><tr><td class="n">14</td><td>Popup + Dialogue</td><td class="v">1.0</td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">All</span></td></tr><tr><td class="n">15</td><td>Progress</td><td class="v">1.0</td><td><span class="pill rev">in review</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">All</span></td></tr><tr><td class="n">16</td><td>Radio</td><td class="v">1.0</td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">All</span></td></tr><tr><td class="n">17</td><td>Search</td><td class="v">1.0</td><td><span class="pill ">Todo</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill empty">—</span></td><td><span class="pill empty">—</span></td></tr><tr><td class="n">18</td><td>Slide button</td><td class="v">1.0</td><td><span class="pill ">Todo</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill empty">—</span></td><td><span class="pill empty">—</span></td></tr><tr><td class="n">19</td><td>Slider</td><td class="v">1.0</td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill rev">in review</span></td><td><span class="pill ">All</span></td></tr><tr><td class="n">20</td><td>Status</td><td class="v">1.0</td><td><span class="pill ">Todo</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill empty">—</span></td><td><span class="pill empty">—</span></td></tr><tr><td class="n">21</td><td>Stepper</td><td class="v">1.1</td><td><span class="pill ">Todo</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill empty">—</span></td><td><span class="pill empty">—</span></td></tr><tr><td class="n">22</td><td>Steps</td><td class="v">1.0</td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">All</span></td></tr><tr><td class="n">23</td><td>Switch</td><td class="v">1.0</td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill rev">in review</span></td><td><span class="pill ">All</span></td></tr><tr><td class="n">24</td><td>Tabs</td><td class="v">1.0</td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">All</span></td></tr><tr><td class="n">25</td><td>Tag</td><td class="v">1.0</td><td><span class="pill rev">in review</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">All</span></td></tr><tr><td class="n">26</td><td>Text area</td><td class="v">1.0</td><td><span class="pill ">Todo</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill empty">—</span></td><td><span class="pill empty">—</span></td></tr><tr><td class="n">27</td><td>Time Picker</td><td class="v">1.0</td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">All</span></td></tr><tr><td class="n">28</td><td>Timeline</td><td class="v">1.0</td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">All</span></td></tr><tr><td class="n">29</td><td>Toast message</td><td class="v">1.0</td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">All</span></td></tr><tr><td class="n">30</td><td>Tooltip</td><td class="v">1.0</td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill done">done</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">All</span></td></tr><tr><td class="n">31</td><td>Breadcrumbs</td><td class="v">1.0</td><td><span class="pill ">Todo</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">Todo</span></td><td><span class="pill dev-web">web</span></td></tr><tr><td class="n">32</td><td>Combobox</td><td class="v">1.0</td><td><span class="pill ">Todo</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">Todo</span></td><td><span class="pill dev-web">web</span></td></tr><tr><td class="n">33</td><td>Command Panel</td><td class="v">1.0</td><td><span class="pill ">Todo</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">Todo</span></td><td><span class="pill dev-web">web</span></td></tr><tr><td class="n">34</td><td>Counter</td><td class="v">1.0</td><td><span class="pill ">Todo</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">Todo</span></td><td><span class="pill dev-web">web</span></td></tr><tr><td class="n">35</td><td>Dropdown List</td><td class="v">1.0</td><td><span class="pill ">Todo</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">Todo</span></td><td><span class="pill dev-web">web</span></td></tr><tr><td class="n">36</td><td>Pagination</td><td class="v">1.0</td><td><span class="pill ">Todo</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">Todo</span></td><td><span class="pill ">Todo</span></td><td><span class="pill dev-web">web</span></td></tr></tbody></table></div>
+  </section>
+  <section class="chapter">
+    <div class="chapter-grid">
+      <h2 class="reveal"><small><span lang="vi">10 — Bài học</span><span lang="en">10 — Learnings</span></small><span lang="vi">Design System là sản phẩm, không phải thư viện</span><span lang="en">A Design System is a product, not a library</span></h2>
+      <div class="body reveal">
+        <div lang="vi"><ul>
+          <li>Tách token theo tầng giúp đổi brand / theme mà không phải sửa từng component.</li>
+          <li>Tên token tốt là tài liệu tốt nhất: cấu trúc component / variant / state / property giúp giảm câu hỏi khi bàn giao.</li>
+          <li>Tài liệu cần có version và trạng thái — người dùng phải biết bản nào là bản đúng.</li>
+          <li>Dùng AI (Claude Code) để hỗ trợ rà soát, đặt tên và viết tài liệu giúp duy trì hệ thống nhanh hơn.</li>
+        </ul></div>
+        <div lang="en"><ul>
+          <li>Tiered tokens let you change brand or theme without touching every component.</li>
+          <li>Good token names are the best documentation: component / variant / state / property reduces questions at handover.</li>
+          <li>Docs need versions and status — people must know which version is the source of truth.</li>
+          <li>Using AI (Claude Code) to help review, name and write docs keeps the system maintainable.</li>
+        </ul></div>
+      </div>
+    </div>
+
+  </section>
+  <a class="next" href="work.html" data-view></a>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="assets/js/data.js?v=52" defer></script>
+<script src="assets/js/main.js?v=52" defer></script>
+</body>
+</html>
